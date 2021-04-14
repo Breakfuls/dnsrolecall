@@ -1,0 +1,6 @@
+---
+- hosts: testserver
+  become: yes
+  name: rolecall
+  roles: 
+    - dnsrole

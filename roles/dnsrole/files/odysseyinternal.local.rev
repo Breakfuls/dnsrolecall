@@ -1,0 +1,29 @@
+$TTL 86400
+@ IN SOA dns-primary.odysseyinternal.local. admin.odysseyinternal.local. (
+                                            2021032402 ;Serial
+                                            3600 ;Refresh
+                                            1800 ;Retry
+                                            604800 ;Expire
+                                            86400 ;Minimum TTL
+)
+;Name Server Information
+@ IN NS dns-primary.odysseyinternal.local.
+ns1     IN      A       192.168.10.76
+
+
+;PTR Record IP address to Hostname
+70      IN      PTR     test.odysseyinternal.local.
+71      IN      PTR     esx.odysseyinternal.local.
+73	IN	PTR	app1test.odysseyinternal.local.
+76      IN      PTR     ns1.odysseyinternal.local.
+60      IN      PTR     mail.odysseyinternal.local.
+79      IN      PTR     ovirt-server.odysseyinternal.local.
+80      IN      PTR     ovirt-engine.odysseyinternal.local.
+81      IN      PTR     nfs.odysseyinternal.local.
+95      IN      PTR     proxmgt.odysseyinternal.local.
+101     IN      PTR     app1.odysseyinternal.local.
+102     IN      PTR     app2.odysseyinternal.local.
+103     IN      PTR     haproxy.odysseyinternal.local.
+104 	IN	PTR 	database.odysseyinternal.local.
+86	IN	PTR     asrock.odysseyinternal.local.
+97	IN	PTR     rear-dev1.odysseyinternal.local.

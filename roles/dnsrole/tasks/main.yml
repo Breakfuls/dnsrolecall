@@ -1,0 +1,39 @@
+---
+
+- name: Install bind
+  yum:
+    pkg: bind
+    state: latest
+
+- name: Configure /etc/named.conf
+  copy:
+    src: named.conf
+    dest: /etc/named.conf
+
+- name: Add DNS to firewall
+  firewalld:
+    service: dns
+    permanent: true
+    state: enabled
+
+- name: Configure /etc/resolv.conf
+  copy:
+    src: resolv.conf
+    dest: /etc/resolv.conf
+  
+- name: Configure forward lookup zone
+  copy:
+    src: odysseyinternal.local.db
+    dest: /var/named
+
+- name: Configure forward lookup zone
+  copy:
+    src: odysseyinternal.local.rev
+    dest: /var/named
+
+- name: restart named
+  service:
+    name: named
+    state: restarted
+    enabled: yes
+

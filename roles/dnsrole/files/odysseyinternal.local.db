@@ -1,0 +1,34 @@
+$TTL 86400
+@ IN SOA dns-primary.odysseyinternal.local. admin.odysseyinternal.local. (
+                                                2021032402 ;Serial
+                                                3600 ;Refresh
+                                                1800 ;Retry
+                                                604800 ;Expire
+                                                86400 ;Minimum TTL
+)
+
+;Name Server Information
+@ IN NS dns-primary.odysseyinternal.local.
+
+;IP Address for Name Server
+dns-primary IN A 192.168.10.76
+;Mail Server MX (Mail exchanger) Record
+odysseyinternal.local. IN MX 10 mail.odysseyinternal.local.
+
+;A Record for the following Host name
+test		IN   A   192.168.10.70
+esx		IN   A   192.168.10.71
+app1test	IN   A   192.168.10.73
+ns1		IN   A   192.168.10.76
+ovirt-server 	IN   A	 192.168.10.79
+ovirt-engine 	IN   A	 192.168.10.80
+nfs	 	IN   A	 192.168.10.81
+proxmgt		IN   A	 192.168.10.95
+app1 		IN   A   192.168.10.101
+app2 		IN   A   192.168.10.102
+haproxy 	IN   A   192.168.10.103
+database	IN   A   192.168.10.104
+asrock		IN   A   192.168.10.86
+rear-dev1	IN   A   192.168.10.97
+;CNAME Record
+mail  IN   CNAME ns1.odysseyinternal.local.
